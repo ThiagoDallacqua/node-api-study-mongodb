@@ -11,7 +11,7 @@ const corsOptions = {
 }
 
 module.exports = app => {
-  app.post("/stripe/charge", cors(), (req, res) => {
+  app.post("/stripe/charge", cors(corsOptions), (req, res) => {
   let amount = 100;
 
 
