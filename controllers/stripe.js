@@ -16,7 +16,6 @@ module.exports = app => {
     amount: 100,
     description: "Sample Charge",
     currency: "eur",
-    customer: customer.id,
     source: req.body.card
   })
   .then(charge => res.send("Payment received"));
