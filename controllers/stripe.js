@@ -1,7 +1,6 @@
 var logger = require('../servicos/logger.js')
 
-// const keySecret = process.env.STRIPE_SECRET_KEY;
-const keySecret = "sk_test_F8SBePJUXivKMMzrDQG471X7";
+const keySecret = process.env.STRIPE_SECRET_KEY;
 
 const stripe = require("stripe")(keySecret);
 
