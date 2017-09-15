@@ -180,23 +180,23 @@ module.exports = function(app) {
               res.status(201).json(response);
               return;
             }else{
-              
+
               var response = {
                 dados_do_pagamento: pagamento,
                 cartao: retorno,
                 links: [
                   {
-                    href: `https://node-api-study-mongodb.herokuapp.com/pagamentos/pagamento/${pagamento.id}`,
+                    href: `https://node-api-study-mogodb.herokuapp.com/pagamentos/pagamento/${pagamento.id}`,
                     rel: 'confirmar',
                     method: 'PUT'
                   },
                   {
-                    href: `https://node-api-study-mongodb.herokuapp.com/pagamentos/pagamento/${pagamento.id}`,
+                    href: `https://node-api-study-mogodb.herokuapp.com/pagamentos/pagamento/${pagamento.id}`,
                     rel: 'consultar',
                     method: 'GET'
                   },
                   {
-                    href: `https://node-api-study-mongodb.herokuapp.com/pagamentos/pagamento/${pagamento.id}`,
+                    href: `https://node-api-study-mogodb.herokuapp.com/pagamentos/pagamento/${pagamento.id}`,
                     rel: 'cancelar',
                     method: 'DELETE'
                   }
@@ -214,17 +214,17 @@ module.exports = function(app) {
             dados_do_pagamento: pagamento,
             links: [
               {
-                href: `https://node-api-study-mongodb.herokuapp.com/pagamentos/pagamento/${pagamento.id}`,
+                href: `https://node-api-study-mogodb.herokuapp.com/pagamentos/pagamento/${pagamento.id}`,
                 rel: 'confirmar',
                 method: 'PUT'
               },
               {
-                href: `https://node-api-study-mongodb.herokuapp.com/pagamentos/pagamento/${pagamento.id}`,
+                href: `https://node-api-study-mogodb.herokuapp.com/pagamentos/pagamento/${pagamento.id}`,
                 rel: 'consultar',
                 method: 'GET'
               },
               {
-                href: `https://node-api-study-mongodb.herokuapp.com/pagamentos/pagamento/${pagamento.id}`,
+                href: `https://node-api-study-mogodb.herokuapp.com/pagamentos/pagamento/${pagamento.id}`,
                 rel: 'cancelar',
                 method: 'DELETE'
               }

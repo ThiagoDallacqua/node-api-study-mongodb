@@ -4,7 +4,7 @@ This API simulates a payment app which receives an payment and process, store it
 
 # Usage
 
-To create a payment you must send a POST request to the address `https://node-api-study.herokuapp.com/pagamentos/pagamento` as follows:
+To create a payment you must send a POST request to the address `https://node-api-study-mogodb.herokuapp.com/pagamentos/pagamento` as follows:
 
 Header: Content-Type: application/json
 
@@ -87,17 +87,17 @@ It will also contain links with the other possible operations, from there, which
     },
     "links": [
         {
-            "href": "https://node-api-study.herokuapp.com/pagamentos/pagamento/1",
+            "href": "https://node-api-study-mogodb.herokuapp.com/pagamentos/pagamento/1",
             "rel": "confirmar",
             "method": "PUT"
         },
         {
-            "href": "https://node-api-study.herokuapp.com/pagamentos/pagamento/1",
+            "href": "https://node-api-study-mogodb.herokuapp.com/pagamentos/pagamento/1",
             "rel": "consultar",
             "method": "GET"
         },
         {
-            "href": "https://node-api-study.herokuapp.com/pagamentos/pagamento/1",
+            "href": "https://node-api-study-mogodb.herokuapp.com/pagamentos/pagamento/1",
             "rel": "cancelar",
             "method": "DELETE"
         }
@@ -108,7 +108,7 @@ It will also contain links with the other possible operations, from there, which
 
 This API are integrated with the SOAP Web Service from Correios do Brasil, which can calculate a delivery time
 
-To know the delivery time you must send a POST to the address `https://node-api-study.herokuapp.com/correios/calculo-prazo` as follows:
+To know the delivery time you must send a POST to the address `https://node-api-study-mogodb.herokuapp.com/correios/calculo-prazo` as follows:
 
 Header: Content-Type: application/json
 
