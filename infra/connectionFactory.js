@@ -8,7 +8,7 @@ function createDBConnection() {
   }
 
   if (process.env.NODE_ENV == 'production') {
-    mongoose.openUri(process.env.MONGODB_URI)
+    mongoose.connect(process.env.MONGODB_URI)
   }
 
   return mongoose
