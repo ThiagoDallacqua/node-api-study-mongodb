@@ -1,17 +1,11 @@
-var logger = require('../servicos/logger.js')
-var cors = require('cors');
+var logger = require('../servicos/logger.js');
 
 const keySecret = process.env.STRIPE_SECRET_KEY;
 
 const stripe = require("stripe")(keySecret);
 
-const corsOptions = {
-  origin: 'http://payment-app.surge.sh',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
-
 module.exports = app => {
-  app.post("/stripe/charge", cors(corsOptions), (req, res) => {
+  app.post("/stripe/charge", (req, res) => {
   let amount = 100;
 
 
