@@ -10,20 +10,18 @@ module.exports = app => {
   res.render("index.pug", {keyPublishable}));
 
   app.post("/stripe/charge", (req, res) => {
-  console.log(req.body);
-
-  stripe.charges.create({
-    amount: 10000,
-    description: "Sample Charge",
-    currency: "eur",
-    source: req.body.id
-  })
-  .then((err, charge) => {
-    if(err){
-      console.log(err);
-      return
-    }
-    res.send("Payment received")
+    stripe.charges.create({
+      amount: 10000,
+      description: "Sample Charge",
+      currency: "eur",
+      source: req.body.id
+    })
+    .then((err, charge) => {
+      if(err){
+        console.log(err);
+        return
+      }
+      res.send("Payment received")
   });
 });
 }
