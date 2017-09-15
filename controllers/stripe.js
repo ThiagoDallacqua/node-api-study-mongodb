@@ -13,7 +13,7 @@ module.exports = app => {
   console.log(req.body);
 
   stripe.charges.create({
-    amount: 100,
+    amount: 10000,
     description: "Sample Charge",
     currency: "eur",
     source: req.body.id
