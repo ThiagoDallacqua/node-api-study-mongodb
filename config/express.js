@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
 var morgan = require('morgan');
 var logger = require('../servicos/logger.js');
+var cors = require('cors');
 
 module.exports = function() {
   var app = express();
@@ -17,12 +18,7 @@ module.exports = function() {
   }));
   app.use(bodyParser.json());
   app.use(expressValidator());
-
-  app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
+  app.use(cors());
 
   consign()
   .include('controllers')
