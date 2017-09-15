@@ -1,10 +1,14 @@
 var logger = require('../servicos/logger.js');
 
 const keySecret = process.env.STRIPE_SECRET_KEY;
+const keyPublishable = process.env.STRIPE_PUBLISHABLE_KEY;
 
 const stripe = require("stripe")(keySecret);
 
 module.exports = app => {
+  app.get("/stripe", (req, res) =>
+  res.render("index.pug", {keyPublishable}));
+
   app.post("/stripe/charge", (req, res) => {
   let amount = 100;
 
@@ -20,8 +24,7 @@ module.exports = app => {
       amount,
       description: "Sample Charge",
          currency: "eur",
-         customer: customer.id,
-         source: req.body.stripeToken
+         customer: customer.id
     }))
   .then(charge => res.send("Payment received"));
 });

@@ -8,6 +8,8 @@ var logger = require('../servicos/logger.js');
 module.exports = function() {
   var app = express();
 
+  app.set("view engine", "pug");
+
   app.use(morgan("common", {
     stream: {
       write: function(mensagem) {
