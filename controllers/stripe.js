@@ -17,7 +17,7 @@ module.exports = app => {
 
   stripe.customers.create({
      email: req.body.stripeEmail,
-    source: req.body.stripeToken
+    source: req.body.card
   })
   .then(customer =>
     stripe.charges.create({
