@@ -17,11 +17,8 @@ module.exports = app => {
       source: req.body.id
     })
     .then((err, charge) => {
-      if(err){
-        console.log(err);
-        return
-      }
       res.send("Payment received")
+      return
   });
 });
 }
