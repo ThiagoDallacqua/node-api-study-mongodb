@@ -21,7 +21,7 @@ module.exports = app => {
   })
   .then(customer =>
     stripe.charges.create({
-      amount,
+      amount: amount,
       description: "Sample Charge",
          currency: "eur",
          customer: customer.id
