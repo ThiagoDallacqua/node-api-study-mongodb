@@ -17,6 +17,7 @@
   "dependencies": {
     "body-parser": "^1.18.1",
     "consign": "^0.1.6",
+    "cors": "^2.8.4",
     "express": "^4.15.4",
     "express-validator": "^4.1.1",
     "memcached": "^2.2.2",
