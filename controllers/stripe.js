@@ -16,7 +16,7 @@ module.exports = app => {
     amount: 100,
     description: "Sample Charge",
     currency: "eur",
-    source: req.body.card
+    source: req.body.id
   })
   .then((err, charge) => {
     if(err){
