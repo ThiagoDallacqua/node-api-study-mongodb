@@ -18,6 +18,12 @@ module.exports = app => {
     currency: "eur",
     source: req.body.card
   })
-  .then(charge => res.send("Payment received"));
+  .then((err, charge) => {
+    if(err){
+      console.log(err);
+      return
+    }
+    res.send("Payment received")
+  });
 });
 }
