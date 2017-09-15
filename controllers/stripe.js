@@ -10,9 +10,6 @@ module.exports = app => {
   res.render("index.pug", {keyPublishable}));
 
   app.post("/stripe/charge", (req, res) => {
-  let amount = 100;
-
-
   console.log(req.body);
 
   stripe.customers.create({
@@ -21,10 +18,11 @@ module.exports = app => {
   })
   .then(customer =>
     stripe.charges.create({
-      amount: amount,
+      amount: 100,
       description: "Sample Charge",
-         currency: "eur",
-         customer: customer.id
+      currency: "eur",
+      customer: customer.id,
+      source: customer.id
     }))
   .then(charge => res.send("Payment received"));
 });
